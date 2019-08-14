@@ -15,19 +15,22 @@ class App extends Component {
 
   addItem = () => {
     this.props.store.addItem(this.state.newItem)
+    // this.props.store.editItem('Potatoes')
   }
+
+
 
   render() {
     // console.log(this.props.store.list)
-  return(
-      <div className = "App" >
+    return (
+      <div className="App" >
         < DevTools />
-      <input onChange={this.handleChange} />
-      <button onClick={this.addItem}>Add</button>
-        { this.props.store.list.map((i,ind) => <Item item={i}
-key={ind}
-  store={this.props.store} />
-)}
+        <input onChange={this.handleChange} />
+        <button onClick={this.addItem}>Add</button>
+        {this.props.store.list.map((i, ind) => <Item store={this.props.store} item={i}
+          key={ind}
+          />
+        )}
       </div >
     );
   }
