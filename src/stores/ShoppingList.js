@@ -3,13 +3,15 @@ import { Item } from './Item'
 
 
 export class ShoppingList {
-    // your code here
-    list = [];
-    length;
+    @observable list = []
+    @observable length
     checkItem = () => {
+
         // your code here
     }
-    addItem = () => {
+    addItem = (value) => {
+       let item = new Item(value)
+        this.list.push(item)
         // your code here
     }
     editItem = () => {
@@ -17,6 +19,6 @@ export class ShoppingList {
     }
     deleteItem = () => {
         // your code here
-    } 
+    }
 }
 
